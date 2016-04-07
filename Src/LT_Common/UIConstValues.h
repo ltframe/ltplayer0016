@@ -1,0 +1,2 @@
+//#define MAINBG_WIDTH  800
+//#define MAINBG_HEIGHT  595

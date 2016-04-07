@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawImages.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LT_Common.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UIButton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlClass.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UICanvar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UISlider.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UIList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UILable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UIStatic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UIStaticEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UIButtonEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LT_Common.def">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="res\LT_Common.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DrawImages.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIButton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIInterface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controlclass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="icontrolevent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UICanvar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIConstValues.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UISlider.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UILable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="uistatic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIStaticEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIButtonEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LT_Common.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

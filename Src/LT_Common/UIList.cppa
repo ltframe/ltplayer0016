@@ -1,0 +1,268 @@
+#include "StdAfx.h"
+#include "UIList.h"
+
+UIList::UIList(WCHAR *slider,WCHAR *line,WCHAR *bg): filelistarray(new CArray<FileListInfo,FileListInfo&>()),filestartindex(0),fileitemoffset(0),barRectF(0,0,0,0)
+{
+
+	Drawimage.LoadResImage(slider,L"AAAAAA",m_pSrcImage1);
+	Drawimage.LoadResImage(line,L"AAAAAA",m_pSrcImage2);
+	
+	int iccc=11;
+	int icccd=0;
+	lastsliderbar=NULL;
+	/*filelistarray->SetSize(300,1);
+	while (icccd<300)
+	{
+	CString cs;
+	cs.Format(_T("aaaa%d"),icccd);
+	FileListInfo fileinfo;
+	fileinfo.filename=cs;
+	filelistarray->SetAt(icccd,fileinfo);
+	iccc++;
+	icccd++;
+	}*/
+}
+
+UIList::~UIList(void)
+{
+}
+RECT UIList::IRECT(IControl *ts)
+{
+
+	UIList *templist=static_cast<UIList*>(ts);
+	return templist->Glistinfo.listui_rect;
+}
+
+CString UIList::ICLASSNAME(IControl *ts)
+{
+	UIList *templist=static_cast<UIList*>(ts);
+	return templist->Glistinfo.classname;
+}
+CString UIList::ICLASSTYPE()
+{
+	return CString("UIList");
+}
+
+
+void UIList::IPAINT(HWND hwnd,IControl *ts,Bitmap *bt)
+{
+
+	UIList *templist=static_cast<UIList*>(ts);
+	UIListInfo sinfo=templist->Glistinfo;
+	int showfilecount=17;
+	BITMAPINFO bitmapinfo;
+	int filecount=filelistarray->GetCount();
+	if (filecount<showfilecount)
+	{
+		showfilecount=filecount;
+	}
+	Bitmap bitmap(sinfo.listui_width,sinfo.file_height*showfilecount);
+	int i=0;
+	int y=sinfo.file_height;
+	Graphics graphics(&bitmap);
+	Font myFont(L"ËÎÌו", 12);
+	StringFormat format;
+	format.SetAlignment(StringAlignmentCenter);
+	SolidBrush blackBrush(Color(255, 0, 0));
+	SolidBrush blackBrush1(Color(255,255, 0));
+	/*Pen blackPen(Color(0, 0, 0), 1);*/
+	if (filecount!=0)
+	{
+		for (int id=filestartindex;id<filestartindex+showfilecount;id++)
+		{
+			FileListInfo temp=filelistarray->GetAt(id);
+			//int x=inttemplistarray->ElementAt(0);
+			if (i==0)
+			{
+				y=0;
+			}
+			else
+			{
+				y+=1;
+			}
+		
+			RectF layoutRect(0,y, 150.0,sinfo.file_height);
+			//graphics.FillRectangle(&blackBrush1,layoutRect);
+			int left=0;
+			int top=y+sinfo.listui_offset;
+			int r=307;
+			int b=top+sinfo.file_height;
+			RECT rect={left,top,r,b};
+			filelistarray->ElementAt(i).rect=rect;
+			i++;
+			graphics.DrawString(temp.filename,temp.filename.GetLength(),&myFont,layoutRect,&format,&blackBrush);
+	
+			y+=sinfo.file_height+1;
+				//graphics.DrawImage(m_pSrcImage2,0,y,0,0,100,1,(Unit)2);
+	
+		
+
+			/*filelistinfo *f=&listarray.GetAt(i);*/
+		}
+	}
+
+	Bitmap tempbitmap(sinfo.listui_width,sinfo.listui_height);
+	Graphics tempgraphics(&tempbitmap);
+	tempgraphics.DrawImage(&bitmap,0,0,0,fileitemoffset,sinfo.listui_width,sinfo.listui_height,(Unit)2);
+
+	//Graphics *g=Graphics::FromHDC(hdc);
+	Graphics g(bt);
+	g.DrawImage(&tempbitmap,sinfo.listui_x,sinfo.listui_y,0,0,sinfo.listui_width,sinfo.listui_height,(Unit)2);
+	if (lastsliderbar!=NULL)
+	{
+		g.DrawImage(lastsliderbar,barRectF);
+	}
+	
+	//delete g;
+	//delete templist;
+
+}
+void UIList::ILBUTTONDBCLICK(CPoint point,int cid,CArray<LPVOID,LPVOID&> *ArrayList)
+{
+
+	for (int i=0;i<filelistarray->GetSize();i++)
+	{
+		if(::PtInRect(&filelistarray->GetAt(i).rect,point))
+		{
+			CString cs;
+			cs.Format(_T("%s"),filelistarray->GetAt(i).filename);
+			//MessageBox(NULL,cs,NULL,0);
+			CString mname=filelistarray->GetAt(i).filepath;
+			 UIList *templist=static_cast<UIList*>(ArrayList->GetAt(13));
+			icontrolevent->SetContorEvent(templist->Glistinfo.classname,templist,mname);
+			break;
+		}
+	}
+}
+
+void UIList::IMOUSELEAVE(HWND hwnd,IControl *ts,CArray<LPVOID,LPVOID&> *ArrayList)
+{
+
+}
+void UIList::ILBUTTONDOWN(HWND hwnd,IControl *ts,CArray<LPVOID,LPVOID&> *ArrayList,CPoint point,bool & m_bMouseTracking)
+{
+	/*RECT rect={this->Glistinfo.sliderbar_rect};*/
+	//if (PtInRect())
+	//{
+	//}
+	return;
+}
+void UIList::ILBUTTONUP(HWND hwnd,IControl *ts,CArray<LPVOID,LPVOID&> *ArrayList)
+{
+	return;
+}
+
+void UIList::IMOUSEHOVER(HWND hwnd,IControl *ts,CArray<LPVOID,LPVOID&> *ArrayList,CPoint point,int controlid)
+{
+	//UIList *templist=static_cast<UIList*>(ts);
+	//UIListInfo sinfo=templist->Glistinfo;
+	//if(::PtInRect(&sinfo.itemlistrect,point))
+	//{
+
+	//	return;	
+	//}
+	//if(::PtInRect(&sinfo.sliderbar_rect,point))
+	//{
+	//	//MessageBox(NULL,_T("adfafadfa"),NULL,0);
+	//	return;
+	//}
+	//if(::PtInRect(&sinfo.slidertop_rect,point))
+	//{
+	//	return;
+	//}
+	//if(::PtInRect(&sinfo.sliderbelow_rect,point))
+	//{
+	//	return;
+	//}
+
+}
+void UIList::IMOUSEMOVE(HWND hwnd,IControl *ts,CPoint point)
+{
+	UIList *templist=static_cast<UIList*>(ts);
+	UIListInfo sinfo=templist->Glistinfo;
+	FileListInfo finfo=templist->Gfileinfo;
+
+
+
+
+	if (point.y<=sinfo.listui_y)
+	{
+		return;
+
+	}
+
+	if (point.y>=sinfo.listui_y+sinfo.listui_height)
+	{
+		return;
+
+	}
+	
+			int ty=point.y-sinfo.listui_offset;
+			fileitemoffset = ty%sinfo.file_height;
+			if(ty<sinfo.file_height)
+			{
+				filestartindex=0;
+			}
+			else
+			{
+				 filestartindex=ceil((float)ty/sinfo.file_height);
+
+				 if(fileitemoffset!=0){
+					 if(filestartindex>1)
+					 filestartindex--;
+				 }
+			}
+				
+			 templist->Glistinfo.sliderbar_y=point.y;
+			 if (templist->Glistinfo.sliderbar_y>sinfo.listui_y+sinfo.listui_height)
+			 {
+				 templist->Glistinfo.sliderbar_y=sinfo.listui_y+sinfo.listui_height;
+			 }
+			 if(templist->Glistinfo.sliderbar_y<sinfo.listui_y)
+			 {
+				 templist->Glistinfo.sliderbar_y=sinfo.listui_y;
+			 }
+			 if (point.y*this->Glistinfo.setpint)
+			 {
+				barRectF.Y=this->Glistinfo.listui_y+this->Glistinfo.listui_height;
+			 }
+			 else
+			 {
+				barRectF.Y=this->Glistinfo.sliderbar_y*this->Glistinfo.setpint;
+			 }
+			 
+			 ::InvalidateRect(hwnd,&sinfo.listui_rect,1);
+}
+
+void UIList::GetSliderBarHeight()
+{
+	this->Glistinfo.sliderbar_height=16;
+	int filecount=filelistarray->GetSize();
+	int allfilehight=filecount*this->Glistinfo.file_height;
+	int barhieght=0;
+	if (allfilehight>=this->Glistinfo.listui_height*2)
+	{
+		barhieght=40;
+		this->Glistinfo.setpint=allfilehight-barhieght/this->Glistinfo.listui_height-this->Glistinfo.sliderbar_height;
+	}
+	else
+	{
+		if (allfilehight>this->Glistinfo.listui_height)
+		{
+			barhieght=this->Glistinfo.listui_height-(allfilehight-this->Glistinfo.listui_height);
+			this->Glistinfo.setpint=1;
+		}
+
+	}
+	lastsliderbar=new Bitmap(this->Glistinfo.sliderbar_width,barhieght);
+	bargraphics=new Graphics(lastsliderbar);
+	bargraphics->DrawImage(m_pSrcImage1,0,0,0,0,this->Glistinfo.sliderbar_width,barhieght,(Unit)2);
+	int bostartint=this->Glistinfo.sliderbar_height-20;
+	bargraphics->DrawImage(m_pSrcImage1,0,20,0,bostartint,this->Glistinfo.sliderbar_width,barhieght,(Unit)2);
+	//delete bargraphics;
+	barRectF.X=this->Glistinfo.sliderbar_x;
+	barRectF.Y=this->Glistinfo.sliderbar_y;
+	barRectF.Width=this->Glistinfo.sliderbar_width;	
+	barRectF.Height=20;
+	
+} 

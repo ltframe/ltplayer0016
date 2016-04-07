@@ -1,0 +1,319 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\LTPlayer.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""l.CHS\\afxres.rc""      // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LTPLAYER_DIALOG DIALOGEX 0, 0, 319, 200
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_ACCEPTFILES | WS_EX_APPWINDOW
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+IDD_CONTROLPANEL DIALOGEX 0, 0, 316, 182
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG1 DIALOGEX 0, 0, 437, 231
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,325,210,50,14
+    PUSHBUTTON      "取消",IDCANCEL,380,210,50,14
+END
+
+IDD_UISETTING DIALOGEX 0, 0, 301, 174
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "界面设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,7,287,160
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,25,32,234,16
+    LTEXT           "背景透明度",IDC_STATIC,30,21,42,13
+    CONTROL         "",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,77,56,13,12
+    LTEXT           "开启透明度",IDC_STATIC,29,57,44,12
+    GROUPBOX        "背景图片设置",IDC_STATIC,21,74,260,88
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_SINGLESEL | LVS_AUTOARRANGE | WS_TABSTOP,22,87,257,70,WS_EX_TRANSPARENT
+    PUSHBUTTON      "自定义背景图",IDC_BUTTON1,224,57,55,14
+END
+
+IDD_ABOUTSOFT DIALOGEX 0, 0, 305, 174
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "关于",IDC_STATIC,6,7,287,160
+    LTEXT           "        静静聆听是一款完全免费、不存在任何功能或时间限制、简单易用的全格式音乐播放器\r\n\r\n        自主研发的界面库，完全做到了在不损失绘图效率下达到炫酷界面效果。\r\n\r\n        静静聆听拥有华丽简洁的界面，用户可以根据自我喜好，调节界面透明度或背景图片，完全媲美WIN7华丽界面。\r\n\r\n        支持MP3/mp3PRO、AAC/AAC+、WMA、APE、MPC、OGG、FLAC、AIFF等音频格式,支持ID3v1/v2、OGG、WMA、FALC、APE标签。\r\n\r\n",IDC_STATIC,17,18,264,98
+    LTEXT           "",IDC_STATICweb,19,140,237,8
+    CONTROL         "<a href=""http://www.ltplayer.com"">http://www.ltplayer.com</a>",IDC_SYSLINK2,
+                    "SysLink",WS_TABSTOP,19,116,125,11
+END
+
+IDD_FILEJOIN DIALOGEX 0, 0, 317, 174
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文件关联"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,7,287,160
+    CONTROL         "MP3",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,61,31,34,16
+    CONTROL         "WMA",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,61,50,33,10
+    CONTROL         "FLAC",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,61,66,33,9
+    CONTROL         "APE",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,61,82,29,10
+    CONTROL         "OGG",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,61,97,31,10
+END
+
+IDD_MUSICSETTIN DIALOGEX 0, 0, 301, 175
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "播放器设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,7,287,161
+    LTEXT           "音效设置",IDC_STATIC,23,29,52,11
+    COMBOBOX        IDC_COMBO1,22,42,73,13,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "播放器启动后自动播放",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,21,84,96,10
+    CONTROL         "开机自动开启播放器",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,21,66,88,10
+END
+
+IDD_FRAMESHADOWDLG DIALOGEX 0, 0, 320, 200
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+END
+
+IDD_SOFTUPDATE DIALOGEX 0, 0, 306, 175
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "版本检测"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "检测新版本",IDC_BUTTON1,225,69,50,14
+    GROUPBOX        "版本检测",IDC_STATIC,7,7,287,160
+    LTEXT           "版本检测功能帮助您的软件保持最新版本",IDC_SOFTUPDATE1,79,39,170,14
+    CONTROL         "",IDC_GIF,"Static",SS_BLACKRECT | NOT WS_VISIBLE,109,102,20,20
+    CONTROL         "<a>SysLink2</a>",IDC_SYSLINK2,"SysLink",NOT WS_VISIBLE | WS_TABSTOP,25,102,242,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,0,1,5
+ PRODUCTVERSION 0,0,1,5
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "静静聆听"
+            VALUE "FileDescription", "静静聆听全格式音乐播放器"
+            VALUE "FileVersion", "0.0.1.5"
+            VALUE "InternalName", "LTPlayer.exe"
+            VALUE "LegalCopyright", "静静聆听音乐播放器"
+            VALUE "OriginalFilename", "LTPlayer.exe"
+            VALUE "ProductName", "静静聆听音乐播放器"
+            VALUE "ProductVersion", "0.0.1.5"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_LTPLAYER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_CONTROLPANEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_UISETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 294
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+
+    IDD_ABOUTSOFT, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 298
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+
+    IDD_FILEJOIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+
+    IDD_MUSICSETTIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 294
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+
+    IDD_FRAMESHADOWDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_SOFTUPDATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 299
+        VERTGUIDE, 25
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+        HORZGUIDE, 102
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\LTPlayer.ico"
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\LTPlayer.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "l.CHS\afxres.rc"      // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

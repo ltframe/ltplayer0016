@@ -1,0 +1,6 @@
+; LT_Common.def : 声明 DLL 的模块参数。
+
+LIBRARY      "LT_Common"
+
+EXPORTS
+    ; 此处可以是显式导出
